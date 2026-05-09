@@ -28,3 +28,17 @@ spec:
       - pause: { duration: 10s }
       - setWeight: 80
       - pause: { duration: 10s }
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service
+spec:
+  selector:
+    app: example
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: NodePort
